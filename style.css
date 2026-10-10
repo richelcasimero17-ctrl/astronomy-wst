@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Passion+One:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Voces&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Passion+One:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Space+Grotesk:wght@300..700&family=Voces&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Stick+No+Bills:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Stick+No+Bills:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Inconsolata:wght@200..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Stick+No+Bills:wght@200..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
@@ -15,86 +17,111 @@ html {
 body {
     width: 100%;
     overflow-x: hidden;
+    color: rgb(232, 214, 214);
 }
 
 .home {
-    gap: clamp(30px, 10vh, 150px);
-    scroll-snap-align: start;
-    padding: 30px 12px 100px;
-
-    background-image: url("./images/solar-system-large.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.about-us {
-    background:linear-gradient(rgba(7, 26, 47, 0.75),rgba(31, 72, 119, 0.75), rgba(7, 26, 47, 0.75)),
-        url("./images/bg-about-us.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.title {
-    font-family: 'Press Start 2P', Courier, monospace;
-    color: white;
-}
-
-.sections {
     min-height: 100vh;
     min-height: 100svh;
-    height: auto;
+}
 
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    scroll-snap-align: start;
-
-    padding: 60px 20px 110px;
-    overflow: visible;
 }
 
-.sections > * {
+.center-text {
+    text-align: center;
+}
+
+.full-height {
+    height: 100%;
+}
+
+/* FONT STYLE */
+.title {
+    font-family: 'Quantico';
+    font-weight: 600;
+}
+
+.explore-description, .par {
+    font-family: 'Inconsolata';
+}
+
+.contact-par {
+    font-family: 'Ubuntu Mono';
+}
+
+/* HOME SECTION */
+.home {
+    min-height: 100vh;
+    min-height: 100svh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 5vh, 60px);
+    padding: 30px 12px 100px;
+    scroll-snap-align: start;
+    background: url("./images/solar-system-large.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.home .row > * {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
 }
 
 .cards {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
     width: 100%;
-    max-width: 250px;
     height: 100%;
-    margin: 0 auto;
-    gap: 3px;
-
+    min-width: 0;
+    margin: 0;
+    gap: 8px;
+    padding: clamp(5px, 1.5vw, 20px);
     text-align: center;
-    padding: clamp(8px, 3vw, 30px) clamp(4px, 2.5vw, 30px) clamp(8px, 1.5vw, 15px);
-
     background: rgba(101, 119, 168, 0.4);
     backdrop-filter: blur(1px);
-    border-radius: clamp(8px, 2vw, 15px);
+    border-radius: clamp(6px, 1.5vw, 15px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-
     transition: transform 0.3s ease;
 }
 
 .cards h3 {
-    font-size: clamp(11px, 2.2vw, 1.17rem);
+    font-size: clamp(8px, 1.4vw, 18px);
+    overflow-wrap: anywhere;
 }
 
 .cards p {
-    font-size: clamp(8px, 1.8vw, 16px);
+    font-size: clamp(7px, 1vw, 14px);
     overflow-wrap: anywhere;
+}
+
+.small-icon {
+    width: clamp(30px, 4vw, 90px);
+    height: clamp(30px, 4vw, 90px);
+    object-fit: contain;
 }
 
 .card-link {
     display: block;
     height: 100%;
+    min-width: 0;
 }
 
 .link {
@@ -112,35 +139,54 @@ body {
 }
 @keyframes bounce {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
+    100% { transform: translateY(-10px); }
 }
 
-.heading {
-    font-family: 'Press Start 2P', Courier, monospace;
-    color: rgb(232, 214, 214);
-}
-
-.par-explore {
-    text-align: justify;
-}
-
-.par {
-    font-family: 'Space Grotesk', Courier, monospace;
-    color: rgb(232, 214, 214);
-}
-
+/* EXPLORE SECTION */
 #explore {
     background-color: #071A2F;
 }
 
+.explore-description {
+    max-width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.par {
+    text-align: justify;
+}
+
+/* GENERAL SECTIONS */
+.sections {
+    min-height: 100vh;
+    min-height: 100svh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    padding: 60px 20px 110px;
+    overflow: visible;
+}
+
+.sections > * {
+    width: 100%;
+}
+
 .btns {
-    padding: 2px 4px;
+    display: inline-block;
+    padding: 4px 8px;
     margin: 3px;
     text-align: center;
     border-radius: 5px;
     border: none;
-    text-decoration: none;
     background-color: rgb(232, 232, 223);
+    color: #071A2F;
+    white-space: nowrap;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
 }
 
 .btns.active {
@@ -150,18 +196,15 @@ body {
 .button-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;          
+    flex-wrap: wrap;
     gap: 4px;
     justify-content: center;
     align-items: center;
-
     width: max-content;
     max-width: calc(100% - 20px);
-    padding: 4px 20px;
-
+    padding: 6px 16px;
     background: rgb(95, 111, 155);
     border-radius: 12px;
-
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -169,41 +212,60 @@ body {
     z-index: 1000;
 }
 
-.contact-content {
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 60px 5% 110px;
+
+    background:
+        linear-gradient(rgba(7, 26, 47, 0.75), rgba(31, 72, 119, 0.75),rgba(7, 26, 47, 0.75)),
+        url("./images/bg-about-us.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-content {
+    flex: 7 1 0;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: clamp(24px, 5vh, 50px);
-    width: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-content {
+    flex: 3 1 0;
+    min-width: 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
 }
 
 .contact-section {
     text-align: center;
     max-width: 700px;
-}
-
-.contact-members p {
-    max-width: 600px;           
+    margin: 0 auto;
 }
 
 .icon-place {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;           
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     text-align: center;
     gap: 20px;
-}
-
-.icon-contact {
-    width: clamp(36px, 9vw, 48px);
-    height: clamp(36px, 9vw, 48px);
-    flex-shrink: 0;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    background-color: grey;
 }
 
 .icon-place .card-link {
@@ -211,8 +273,19 @@ body {
     min-width: 80px;
 }
 
-.contact-members .card-link {
-    height: 100%;
+.icon-contact {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.contact-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    margin-top: 12px;
 }
 
 @media (max-width: 991.98px) {
@@ -223,47 +296,96 @@ body {
 
 @media (max-width: 767.98px) {
     .home {
-        gap: 30px;
+        gap: 25px;
         padding: 30px 12px 100px;
     }
 
-    .sections {
-        padding: 40px 14px 110px;
-        justify-content: flex-start;  
+    .home .row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 0;
+    }
+
+    .home .row > * {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
     }
 
     .cards {
-        max-width: 350px;
-        min-height: auto;
-        height: auto;
-        padding: 20px 16px;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        padding: clamp(8px, 2.5vw, 16px);
+        gap: 6px;
     }
 
     .cards h3 {
-        font-size: 18px;
+        font-size: clamp(11px, 2.8vw, 16px);
     }
 
     .cards p {
-        font-size: 14px;
+        font-size: clamp(9px, 2.2vw, 13px);
+        line-height: 1.4;
     }
 
-    .card-icon h2 {
-        font-size: 16px;
+    .small-icon {
+        width: clamp(24px, 6vw, 40px);
+        height: clamp(24px, 6vw, 40px);
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        padding: 40px 16px 110px;
+        text-align: center;
+    }
+
+    .contact > .about-content {
+        flex: none;
+        width: 100%;
+        max-width: 650px;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .contact > .contact-content {
+        flex: none;
+        width: 100%;
+        max-width: 650px;
+        align-items: center;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .contact-section {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-members {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .icon-place {
+        justify-content: center;
+        gap: 14px;
     }
 
     .btns {
         padding: 4px 6px;
         margin: 1px;
         font-size: 11px;
-        white-space: nowrap;
     }
 
     .button-container {
         padding: 8px 10px;
         bottom: 10px;
-    }
-
-    .icon-place {
-        gap: 14px;
     }
 }
