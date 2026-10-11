@@ -389,3 +389,223 @@ body {
         bottom: 10px;
     }
 }
+
+/* Planets page */
+body.planets-page {
+            min-height: 100vh;
+            color: #f5f3ff;
+            font-family: 'Inconsolata', sans-serif;
+            background: url("./images/planets.png") center / cover no-repeat fixed;
+        }
+
+        .planets-main {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            padding: 54px 24px 72px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            z-index: 10;
+            padding: 9px 16px;
+            color: #f5f3ff;
+            text-decoration: none;
+            background: rgba(35, 49, 91, 0.9);
+            border: 1px solid rgba(214, 223, 255, 0.3);
+            border-radius: 8px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(76, 96, 155, 0.95);
+            transform: translateY(-2px);
+        }
+
+        .planets-heading {
+            margin-bottom: 34px;
+            text-align: center;
+        }
+
+        .planets-heading h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            letter-spacing: 0.08em;
+        }
+
+        .planet-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .planet-card {
+            min-height: 235px;
+            padding: 14px;
+            color: inherit;
+            text-align: left;
+            background: linear-gradient(145deg, rgba(91, 111, 169, 0.31), rgba(23, 34, 70, 0.68));
+            border: 1px solid rgba(202, 213, 255, 0.2);
+            border-radius: 18px;
+            cursor: zoom-in;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .planet-card:hover,
+        .planet-card:focus-visible {
+            transform: translateY(-5px);
+            border-color: rgba(210, 220, 255, 0.62);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3);
+        }
+
+        .planet-image {
+            display: grid;
+            min-height: 155px;
+            place-items: center;
+            overflow: hidden;
+            color: rgba(226, 231, 255, 0.45);
+            background: radial-gradient(circle at 50% 45%, rgba(125, 147, 207, 0.2), rgba(6, 12, 29, 0.38) 68%);
+            border: 1px dashed rgba(202, 213, 255, 0.2);
+            border-radius: 13px;
+        }
+
+        .planet-image img {
+            width: 100%;
+            height: 155px;
+            object-fit: contain;
+        }
+        .planets-page .image-hint {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .planet-card h2 {
+            margin: 14px 4px 2px;
+            font-family: 'Quantico', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .lightbox-description {
+            max-width: 480px;
+            margin: 10px auto 0;
+            color: #d2d8eb;
+            font-size: 1rem;
+            line-height: 1.35;
+        }
+
+        .planet-lightbox {
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            display: grid;
+            padding: 24px;
+            place-items: center;
+            background: rgba(4, 8, 20, 0.58);
+            backdrop-filter: blur(0);
+            -webkit-backdrop-filter: blur(0);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.28s ease, backdrop-filter 0.28s ease, visibility 0.28s;
+        }
+
+        .planet-lightbox.is-open {
+            opacity: 1;
+            visibility: visible;
+            backdrop-filter: blur(11px);
+            -webkit-backdrop-filter: blur(11px);
+        }
+
+        .lightbox-panel {
+            position: relative;
+            width: min(700px, 100%);
+            padding: clamp(24px, 5vw, 48px);
+            text-align: center;
+            background: linear-gradient(145deg, rgba(35, 49, 91, 0.96), rgba(10, 17, 39, 0.97));
+            border: 1px solid rgba(214, 223, 255, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+            transform: scale(0.82);
+            transition: transform 0.28s ease;
+        }
+
+        .planet-lightbox.is-open .lightbox-panel {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 42px;
+            height: 42px;
+            color: white;
+            font-size: 1.8rem;
+            line-height: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .lightbox-image {
+            display: grid;
+            min-height: min(48vh, 350px);
+            margin-bottom: 22px;
+            place-items: center;
+            overflow: hidden;
+            color: rgba(226, 231, 255, 0.45);
+            background: radial-gradient(circle, rgba(129, 151, 217, 0.2), rgba(5, 10, 25, 0.42) 70%);
+            border: 1px dashed rgba(202, 213, 255, 0.24);
+            border-radius: 18px;
+        }
+
+        .lightbox-image img {
+            max-width: 100%;
+            max-height: min(48vh, 350px);
+            object-fit: contain;
+        }
+
+        .lightbox-panel h2 {
+            font: 700 clamp(1.8rem, 5vw, 2.7rem) 'Quantico', sans-serif;
+        }
+
+        body.lightbox-active {
+            overflow: hidden;
+        }
+
+        @media (max-width: 800px) {
+            .planet-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .planets-main {
+                padding: 38px 16px 50px;
+            }
+
+            .planet-grid {
+                gap: 12px;
+            }
+
+            .planet-card {
+                min-height: 205px;
+                padding: 10px;
+            }
+
+            .planet-image,
+            .planet-image img {
+                height: 130px;
+                min-height: 130px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
