@@ -1,10 +1,89 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <title>Planets | Lakbay Kalawakan</title>
 </head>
-<body>
-    <h1>HELOOOOOOOOOO</h1>
+<body class="planets-page">
+    <a class="back-button" href="index.html">← Back</a>
+
+    <main class="planets-main">
+        <header class="planets-heading">
+            <h1 class="title">THE PLANETS</h1>
+        </header>
+
+        <section class="planet-grid" aria-label="The eight planets">
+            <button class="planet-card" type="button" data-name="Mercury" data-description="Mercury is the smallest planet and the closest to the Sun. Its rocky surface is covered with craters." aria-label="Zoom in on Mercury">
+                <span class="planet-image">
+                    <img src="../images/mercury.png" alt="Mercury">
+                </span>
+                <h2>Mercury</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Venus" data-description="Venus is a rocky planet wrapped in thick clouds. Its dense atmosphere traps heat, making it the hottest planet." aria-label="Zoom in on Venus">
+                <span class="planet-image">
+                    <img src="../images/venus.png" alt="Venus">
+                </span>
+                <h2>Venus</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Earth" data-description="Earth is our home and the only world known to support life. Its surface has vast oceans, continents, and a protective atmosphere." aria-label="Zoom in on Earth">
+                <span class="planet-image">
+                    <img src="../images/earth.png" alt="Earth">
+                </span>
+                <h2>Earth</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Mars" data-description="Mars is a cold, dusty planet with a thin atmosphere. It is home to giant volcanoes and may once have had flowing water." aria-label="Zoom in on Mars">
+                <span class="planet-image">
+                    <img src="../images/mars.png" alt="Mars">
+                </span>
+                <h2>Mars</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Jupiter" data-description="Jupiter is the largest planet in our solar system. This gas giant is known for its colorful cloud bands and enormous storms." aria-label="Zoom in on Jupiter">
+                <span class="planet-image">
+                    <img src="../images/jupiter.png" alt="Jupiter">
+                </span>
+                <h2>Jupiter</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Saturn" data-description="Saturn is a gas giant best known for its wide, bright rings. The rings are made mostly of pieces of ice and rock." aria-label="Zoom in on Saturn">
+                <span class="planet-image">
+                    <img src="../images/saturn.png" alt="Saturn">
+                </span>
+                <h2>Saturn</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Uranus" data-description="Uranus is a cold, blue-green ice giant. It rotates on its side, giving it unusual seasons that last for years." aria-label="Zoom in on Uranus">
+                <span class="planet-image">
+                    <img src="../images/uranus.png" alt="Uranus">
+                </span>
+                <h2>Uranus</h2>
+            </button>
+
+            <button class="planet-card" type="button" data-name="Neptune" data-description="Neptune is a distant, deep-blue ice giant. It has a cold atmosphere and some of the fastest winds in the solar system." aria-label="Zoom in on Neptune">
+                <span class="planet-image">
+                    <img src="../images/neptune.png" alt="Neptune">
+                </span>
+                <h2>Neptune</h2>
+            </button>
+        </section>
+    </main>
+
+    <div class="planet-lightbox" id="planetLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-hidden="true">
+        <div class="lightbox-panel">
+            <button class="lightbox-close" type="button" aria-label="Close lightbox">&times;</button>
+            <div class="lightbox-image" id="lightboxImage">
+                <span class="image-hint">Add this planet's image in the card above</span>
+            </div>
+            <h2 id="lightboxTitle"></h2>
+            <p class="lightbox-description" id="lightboxDescription"></p>
+        </div>
+    </div>
+    <script src='../script.js'></script>
+
 </body>
 </html>
